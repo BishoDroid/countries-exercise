@@ -17,7 +17,6 @@ public class ConsoleApplication {
                 asian.getName().getOfficial());
         log.info("===========================================================================\n");
 
-
         log.info("===========================================================================");
         List<Country> countries = countriesService.getCountriesSortedByPopulation();
         log.info("All countries sorted by population in descending order");
