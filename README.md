@@ -20,7 +20,7 @@ The logic mostly resides in `AbstractCountriesService` and is shared between api
 ## How to run
 * Clone the repository
 ```shell
-git clone git@github.com:blurrrb-app/countries-exercise.git
+git clone git@github.com:BishoDroid/countries-exercise.git
 ```
 **From IDE**
 * Import the project into your preferred IDE
