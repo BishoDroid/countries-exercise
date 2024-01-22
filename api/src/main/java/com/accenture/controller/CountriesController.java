@@ -3,6 +3,7 @@ package com.accenture.controller;
 import com.accenture.dto.Country;
 import com.accenture.service.ApiCountriesService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +36,9 @@ public class CountriesController {
             description =
                     "To get the country in a region that has the highest number of borders with countries that do not belong to the same region")
     @GetMapping("/{region}/countryWithMostBordersOutside")
-    public ResponseEntity<Country> getCountryWithMostBordersOutsideRegion(@PathVariable("region") String region) {
+    public ResponseEntity<Country> getCountryWithMostBordersOutsideRegion(
+            @Parameter(description = "Region of the country", required = true, example = "asia") @PathVariable("region")
+                    String region) {
         return ResponseEntity.ok(apiCountriesService.getCountryWithMostBordersOutsideRegion(region));
     }
 }

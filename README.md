@@ -15,6 +15,8 @@ The solution is structured into a multi-module Maven project comprising:
 The solution consists of two different ways to display the answers
 * Rest Solution: Access via RESTful endpoints, suitable for integration into web services or applications.
 * Console Solution: Direct interaction through a command-line interface, ideal for standalone usage.
+
+The logic mostly resides in `AbstractCountriesService` and is shared between api and console. the modules define how data is pulled from the restcountries api.
 ## How to run
 * Clone the repository
 ```shell
@@ -53,5 +55,8 @@ java -jar ./api/target/api-app.jar
   * `okHttp`: To make http requests to get the required resources to solve the exercise.
   * `slf4j-log4j12 and jcabi`: for formatted logging in the console.
   
-## Notes
+## Important notes
+* The solution could be as simple as a console program that calls the restcountries api endpoints and prints out the results.
 * I was not sure exactly what format was the solution needed to be in hence the `console` and `api` solutions to give you the options to choose.
+* I could also do without `log4j` and `jcabi` and just use stdout in `console` for simplicity if needs be.
+* Even though for the second part of the question "country in Asia with the most bordering countries from different regions", it is specific enough, I parameterized the solution in case the answer is also needed for another region (hope that's ok).
